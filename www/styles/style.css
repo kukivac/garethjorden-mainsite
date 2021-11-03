@@ -1,0 +1,579 @@
+* {
+  font-family: Roboto, Helvetica, sans-serif;
+  color: #ffffff;
+  background-color: #1A1A1C;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+#imagesLeftButton, #imagesRightButton {
+  opacity: 50%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-size: 100%;
+  background-position: top;
+}
+h1 {
+  font-weight: lighter;
+}
+
+header {
+  margin-top: 50px;
+}
+
+header, article {
+  max-width: 938px;
+  padding: 0;
+  width: 90%;
+}
+
+.messageSent {
+  position: absolute;
+  z-index: 50;
+  padding: 15px;
+  margin: auto;
+  background-color: black !important;
+  bottom: 0;
+}
+
+.darkMode .messageSent {
+  color: white;
+}
+
+.withError {
+  background-color: #880000;
+}
+
+.darkMode *, .darkMode {
+  color: #000000;
+  background-color: #ffffff;
+  border-color: #000000;
+}
+
+.fa-toggle-off, .fa-toggle-on {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.fa-chevron-right, .fa-chevron-left {
+  color: #848484;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 4px 30px 10px 10px;
+  border-bottom: #d9d9d9 1px solid;
+  z-index: 2;
+}
+nav .h1 {
+  font-size: 24px;
+}
+nav a, nav h1 {
+  font-variant: all-petite-caps;
+  text-decoration: none;
+  padding: 0 8px;
+  padding-top: 6px;
+  color: #d9d9d9;
+}
+nav a {
+  font-size: 25px;
+  padding-right: 34px;
+}
+nav div > a {
+  font-size: 20px;
+}
+nav div > a:hover {
+  color: #a6a6a6;
+}
+nav .fa-bars {
+  display: none;
+}
+
+.landing-page-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.profile-picture-mockup {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-right: 24px;
+  margin-top: 25px;
+}
+
+.img {
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.profile {
+  display: flex;
+  padding: 10px;
+  min-height: 213px;
+}
+.profile > div:first-of-type {
+  flex: 1;
+}
+.profile > div:last-of-type {
+  flex: 2;
+}
+.profile > div:last-of-type > div:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  padding: 25px 0px 0px 0px;
+}
+.profile > div:last-of-type > div:nth-of-type(1) > * {
+  margin: 10px;
+}
+.profile > div:last-of-type > div:nth-of-type(1) h1 {
+  margin-left: 0;
+  font-size: 30px;
+  font-weight: lighter;
+}
+.profile > div:last-of-type > div:nth-of-type(1) .fas {
+  font-size: 15px;
+}
+.profile > div:last-of-type > div:nth-of-type(2) * {
+  margin: 10px 0px;
+  font-size: 15px;
+}
+.profile > div:last-of-type > div:nth-of-type(2) h3 {
+  font-weight: normal;
+}
+.profile > div:last-of-type > div:nth-of-type(2) p {
+  font-weight: normal;
+}
+.profile > div:last-of-type > div:nth-of-type(2) a {
+  text-decoration: none;
+  color: #587C9D;
+}
+.profile .toggleDiv {
+  display: flex;
+  align-items: center;
+}
+.profile .toggleDiv p {
+  font-size: 15px;
+}
+.profile .toggleDiv .fas {
+  margin-right: 5px;
+}
+.profile .img {
+  width: 150px;
+  height: 150px;
+  margin-top: 20px;
+}
+
+.darkMode .highlights > a:hover h2 {
+  color: #999999;
+}
+
+.highlights {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.highlights .fas {
+  cursor: pointer;
+}
+.highlights > a {
+  display: none;
+  text-align: center;
+  margin: 15px;
+  padding: 2px;
+  height: 100px;
+  width: 95px;
+}
+.highlights > a h2 {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: normal;
+}
+.highlights > a:hover h2 {
+  color: #a6a6a6;
+}
+.highlights .img {
+  width: 74px;
+  height: 74px;
+  margin: auto;
+}
+.highlights h2 {
+  font-size: 15px;
+}
+
+.images {
+  max-width: 935px;
+  margin-top: 25px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+article {
+  border-top: 1px solid #7B7B7B;
+  margin-top: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+article .image {
+  background-color: #bebebe;
+  width: 293px;
+  height: 293px;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+}
+article .album {
+  display: flex;
+  background-image: linear-gradient(black, black);
+  background-blend-mode: multiply;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  filter: blur(15%);
+}
+@media screen and (max-width: 770px) {
+  article .album {
+    text-align: center;
+    font-size: 13px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+article .album p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+article .album * {
+  padding: 0;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #c7c7c6;
+}
+article .imageWrapper {
+  display: inline-block;
+  overflow: hidden;
+  width: 293px;
+  height: 293px;
+  text-decoration: none;
+}
+article .imageWrapper:hover {
+  background-color: black;
+}
+article .imageWrapper:hover .image {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+dialog {
+  top: 0;
+  position: fixed;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.78) !important;
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+}
+dialog #closeDialogButton {
+  position: absolute;
+  right: 40px;
+  top: 70px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+dialog #closeDialogButton:hover {
+  opacity: 1;
+}
+dialog #closeDialogButton:before, dialog #closeDialogButton:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #fff;
+}
+dialog #closeDialogButton:before {
+  transform: rotate(45deg);
+}
+dialog #closeDialogButton:after {
+  transform: rotate(-45deg);
+}
+dialog .photoInfo {
+  max-width: 80vw;
+  max-height: 80vh;
+  background-color: salmon;
+  display: flex;
+  flex-flow: column nowrap;
+}
+dialog .photoInfo img {
+  max-height: 80vh;
+  max-width: 80vw;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+dialog .fas-container {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  width: 80px;
+  height: 120px;
+  cursor: pointer;
+}
+dialog #imagesLeftButton {
+  position: absolute;
+  left: 50px;
+}
+dialog #imagesRightButton {
+  position: absolute;
+  right: 50px;
+}
+dialog .fas-container:first-child {
+  left: 50px;
+}
+dialog .fas-container:last-child {
+  right: 50px;
+}
+dialog .fas {
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+h4 {
+  border-top: 2px solid #7B7B7B;
+  margin-top: 0;
+  padding: 8px 10px;
+  font-variant: all-small-caps;
+  top: -1px;
+  position: relative;
+}
+
+.contactForm {
+  width: 100%;
+}
+.contactForm form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+.contactForm form input, .contactForm form textarea {
+  background-color: white;
+  color: black;
+  border: 2px solid #646464;
+  border-radius: 3px;
+  height: 36px;
+}
+.contactForm form textarea {
+  height: 150px;
+}
+.contactForm form input[type=text], .contactForm form input[type=email], .contactForm form texarea {
+  width: 100%;
+}
+.contactForm form input[type=submit] {
+  width: 58px;
+  height: 37px;
+  margin-top: 15px;
+}
+.contactForm form label {
+  font-size: 13px;
+  padding-top: 16px;
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 1552px) {
+  article {
+    width: 935px;
+  }
+  article .image, article .imageWrapper {
+    width: 293px;
+    height: 293px;
+  }
+}
+@media screen and (min-width: 996px) {
+  .imageWrapper {
+    margin-bottom: 25px;
+  }
+}
+@media screen and (max-width: 996px) {
+  h1 {
+    font-size: 18px !important;
+    font-weight: bolder !important;
+  }
+
+  header, article {
+    width: 100%;
+    height: auto;
+  }
+
+  article .image, article .imageWrapper {
+    width: 32vw;
+    height: 32vw;
+    margin-bottom: 1vw;
+  }
+}
+/*
+@media screen and (max-width: 880px) {
+  header, article {
+    width: 100%;
+    height: auto;
+  }
+  article {
+    $imageSizes: 30vw;
+
+    .image, .imageWrapper {
+      //width: $imageSizes;
+      //height: $imageSizes;
+    }
+
+    .imageWrapper {
+      //margin-bottom: 4vw;
+    }
+  }
+}
+*/
+/*@media screen and (max-width: 865px) {
+  article {
+    $imageSizes: 240px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+*/
+@media screen and (max-width: 771px) {
+  nav div {
+    display: none;
+  }
+  nav .fa-bars {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navShown {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navShown .fa-bars {
+    margin-top: 15px;
+    margin-right: 25px;
+  }
+  .navShown div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .navShown h1 {
+    padding-bottom: 25px;
+  }
+
+  .profile {
+    flex-direction: column;
+  }
+}
+/*
+@media screen and (max-width: 597px) {
+  article {
+    $imageSizes: 170px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+
+@media screen and (max-width: 581px) {
+  article {
+    $imageSizes: 160px;
+
+    .image, .imageWrapper {
+      margin: 1px;
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+
+@media screen and (max-width: 512px) {
+  article {
+    $imageSizes: 139px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+
+@media screen and (max-width: 445px) {
+  article {
+    $imageSizes: 125px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+
+@media screen and (max-width: 401px) {
+  article {
+    $imageSizes: 120px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}*/
+@media screen and (max-width: 385px) {
+  .images {
+    justify-content: center;
+  }
+
+  article .image, article .imageWrapper {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

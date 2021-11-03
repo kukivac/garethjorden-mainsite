@@ -1,0 +1,28 @@
+{extends "../@layout.latte"}
+{block content}
+    <h1>{$info["title"]}</h1>
+    <p class="albumDescription">{$info["description"]}</p>
+    <div class="images">
+        {var $i = 0}
+    {foreach $images as $image}
+            <div class="imageWrapper">
+                <img src="images/thumbnail/{$image["filename"]}" width="350" class="image lazyload" id="image_{$i}"
+                     img-info-id="{$image["id"]}" data-bg="images/thumbnail/{$image["filename"]}">
+            </div>
+            {php $i++}
+        {/foreach}
+        <dialog id="photoDialog">
+            <i class="fas fa-times" id="closeDialogButton"></i>
+            <div class="fas-container" id="imagesLeftButton"><i class="fas fa-chevron-left"></i></div>
+            <div class="photoInfo">
+                <img src="">
+                <div class="info">
+                    <h3></h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+            <div class="fas-container" id="imagesRightButton"><i class="fas fa-chevron-right"></i></div>
+        </dialog>
+    </div>
+{/block}

@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "description": "",
+  "repository": "",
+  "license": "proprietary",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^0.21.0"
+  },
+  "devDependencies": {
+    "minilazyload": "^2.3.4"
+  }
+}
